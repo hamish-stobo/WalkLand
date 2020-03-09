@@ -2,7 +2,6 @@ import request from 'superagent'
 
 export const RECEIVE_PROFILE_INFO = 'RECEIVE_PROFILE_INFO'
 
-// Asynchronous action (retrieving data from database)
 export const receiveProfileInfo = profileInfo => {
   return {
     type: RECEIVE_PROFILE_INFO,

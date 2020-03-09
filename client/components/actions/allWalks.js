@@ -20,15 +20,11 @@ export const receiveRating = (ratings) => {
 
 export function fetchWalks () {
   return (dispatch) => {
-    // dispatch(requestWalks())
     return request
       .get('/api/v1/walks')
       .then(res => {
         dispatch(receiveWalks(res.body))
       })
-      // .catch(err => {
-      //   dispatch(showError(err.message))
-      // })
   }
 }
 

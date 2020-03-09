@@ -46,7 +46,7 @@ class RegisterUser extends Component {
               onChange={this.handleChange}
             />
 
-            <button type='submit'>Submit</button>
+            <button name = 'submit' type='submit'>Submit</button>
           </form>
         </div>
       </div>

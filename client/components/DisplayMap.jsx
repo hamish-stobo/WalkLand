@@ -3,19 +3,19 @@ import { Map, GoogleApiWrapper, Marker, mapStyles } from 'google-maps-react'
 import { connect } from 'react-redux'
 import selectedWalk from './actions/selectedWalk'
 
-class DisplayMap extends Component {
-  bounceMarker = () => {
-    const walk = this.props.selectedWalkState
+export const DisplayMap = (props) =>{
+ const bounceMarker = () => {
+    const walk = props.selectedWalkState
     return <Marker key={walk.id} id={walk.id} position={{
       lat: walk.latitude,
       lng: walk.longitude
     }}
     animation={window.google.maps.Animation.BOUNCE}
-    onClick={() => { this.props.selectedWalk(walk) }}
+    onClick={() => { props.selectedWalk(walk) }}
     />
   }
-  initialMarkers = () => {
-    const { allWalksState, selectedWalkState } = this.props
+  const initialMarkers = () => {
+    const { allWalksState, selectedWalkState } = props
     return allWalksState.map(walk => {
       return <Marker key={walk.id} id={walk.id} position={{
         lat: walk.latitude,
@@ -24,28 +24,29 @@ class DisplayMap extends Component {
       opacity={ selectedWalkState.id === undefined ? 1 : 0.6 }
       visible={ walk.id === selectedWalkState.id ? false : true }
       animation={ selectedWalkState.id === undefined ? 2 : 0}
-      onClick={() => { this.props.selectedWalk(walk) }}
+      onClick={() => { props.selectedWalk(walk) }}
       />
     })
   }
 
-  render () {
+  
     return (
       <>
+      <div data-testid="loadMap">
           <Map
-            google={this.props.google}
+            google={props.google}
             zoom={11}
             style={mapStyles}
             initialCenter={{ lat: -36.848461, lng: 174.763336 }}
           >
-            {this.initialMarkers()}
-            {this.bounceMarker()}
+            {initialMarkers()}
+            {bounceMarker()}
           
           </Map>
+          </div>
       </>
     )
   }
-}
 
 const mapDispatchToProps = dispatch => {
   return {

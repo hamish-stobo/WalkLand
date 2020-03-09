@@ -12,7 +12,7 @@
 .logo-main {
   grid-column: 2 / 3;
   padding: 5px;
-  width: 30%;
+  width: 200px;
   justify-self: center;
   align-self: center;
 }
@@ -40,3 +40,7 @@
   background-color: #000000;
 }
 
+/* FOR TESTING FROM HERE */
+#nav {
+  opacity: 1;
+}

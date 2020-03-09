@@ -23,7 +23,7 @@ class App extends Component {
       <>
       {this.props.errorState !== '' && <ErrorComponent /> }
         {this.props.activePage === 'landingPage' &&
-          <div className="landing-page-container">
+          <div className="landing-page-container title-background">
             <LandingPage />
           </div>
         }
@@ -38,7 +38,7 @@ class App extends Component {
                 <SideBar />
               </div>
             </div>
-            <div className="map-container">
+            <div className="map-containerz">
               <DisplayMap />
             </div>
           </div>

@@ -1,12 +1,21 @@
 .hamish-error {
   background: rgb(250, 128, 114, 0.9);
   z-index: 105;
-  width: 20%;
+  position: fixed;
+  width: 25%;
+  height: 25%;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  min-width: 250px;
+  min-height: 140px;
+  transform: translate(-50%, -50%);
 }
 
 .hamish-button-round {
   background: rgba(255, 255, 255, 0.8);
   z-index: 106;
+  right: 0;
 }
 
 .hamish-popup-inner {
@@ -17,5 +26,60 @@
   text-align: center;
   font-size: 1.2em;
   margin-top: 50px;
+}
+
+.hamish-profile-deleted {
+  background: rgba(250, 128, 114, 0.5);
+  border: 0px;
+  text-decoration: none !important;
+  text-align: center;
+  display:block;
+  height: 100px;
+  margin: 12% auto auto auto;
+  font-size: 1.3em;
+  padding: 25px;
+  max-width: 35%;
+}
+
+.hamish-profile-deleted:hover {
+  color: white;
+}
+
+.hamish-reviews-wrapper {
+  grid-column: 2 / -2;
+  grid-row: 3 / 4;
+}
+
+.hamish-reviews-grid {
+  margin: 60px 0 60px;
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.hamish-review-card {
+  /* display: inline-block;
+  float: left; */
+  width: 30% !important;
+  max-width: 30%;
+  margin: 5px;
+  min-height: 270px;
+  border-radius: 5px;
+  /* background: white;
+  padding: 10px; */
+}
+
+.hamish-stars-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-inline-start: 0px;
+  margin-bottom: 25px;
+}
+
+.hamish-bold {
+  font-weight: bold;
 }
 

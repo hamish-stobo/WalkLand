@@ -1,12 +1,13 @@
 
-body {
+.title-background {
   background-image: url('../images/Landingpage.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   background-color:#464646;
-  font-family: nobel, sans-serif;
+  z-index: -110;
+  height: 100vh;
 }
 
 
@@ -33,7 +34,7 @@ body {
   font-size: 1em ;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 .logo {

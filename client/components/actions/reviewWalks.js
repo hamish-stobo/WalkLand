@@ -1,7 +1,7 @@
 import request from 'superagent'
+import { getReviewRatings } from './allWalks'
 
 export const ADD_REVIEW = 'ADD_REVIEW'
-// export const EDIT_REVIEW = 'EDIT_REVIEW'
 
 const addReview = review => {
   return {
@@ -9,13 +9,6 @@ const addReview = review => {
     review: review
   }
 }
-
-// const editReview = review => {
-//   return {
-//     type: EDIT_REVIEW,
-//     review
-//   }
-// }
 
 export function createReview (review) {
   return (dispatch) => {
@@ -27,6 +20,7 @@ export function createReview (review) {
           console.log('res from review Walksaction: ', res)
         } else {
           dispatch(addReview(review))
+          dispatch(getReviewRatings())
         }
       })
   }

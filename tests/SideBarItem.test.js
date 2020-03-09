@@ -1,6 +1,6 @@
 import React from 'react'
 import renderWithRedux from '../tests/renderWithRedux'
-import { render, fireEvent } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import { SideBarItem } from '../client/components/SideBarItem'
 
 const mockOnClick = jest.fn()
@@ -28,7 +28,10 @@ const data = {
   }
 }
 
-test('test ShowDetails fires a function', async () => {
+
+
+
+test('ShowDetails button exists, is visible and fires a function', async () => {
   const { getByTestId } = renderWithRedux(
     <SideBarItem selectedWalk={mockOnClick}
       activePage={mockOnClick}
@@ -40,11 +43,13 @@ test('test ShowDetails fires a function', async () => {
   const showDetails = getByTestId('showDetails')
   fireEvent.click(getByTestId('showDetails'))
   expect(mockOnClick).toHaveBeenCalledTimes(2)
-  expect(showDetails).toBeInTheDocument()
   expect(showDetails).toHaveTextContent('Show Details')
+  expect(showDetails).toBeInTheDocument()
+  expect(showDetails).toBeVisible()
+  expect(showDetails).toBeTruthy()
 })
 
-test('tests that showMap is visible and fires a function', async () => {
+test('ShowMap button exists, is visible and fires a function', async () => {
   const { getByTestId } = renderWithRedux(
     <SideBarItem selectedWalk={mockOnClick}
       activePage={mockOnClick}
@@ -56,11 +61,13 @@ test('tests that showMap is visible and fires a function', async () => {
   const showMaps = getByTestId('showMap')
   fireEvent.click(getByTestId('showMap'))
   expect(mockOnClick).toHaveBeenCalledTimes(4)
-  expect(showMaps).toBeInTheDocument()
   expect(showMaps).toHaveTextContent('Show Map')
+  expect(showMaps).toBeInTheDocument()
+  expect(showMaps).toBeVisible()
+  expect(showMaps).toBeTruthy()
 })
 
-test('Tests that the title is visible and contains the title', async () => {
+test('Title is visible and contains correct title', async () => {
   const { getByTestId } = renderWithRedux(
     <SideBarItem selectedWalk={mockOnClick}
       activePage={mockOnClick}
@@ -70,12 +77,13 @@ test('Tests that the title is visible and contains the title', async () => {
       ratings={rating} 
     />)
     const sideTitle = getByTestId('sideBarTitle')
+    expect(sideTitle).toHaveTextContent('Goldie\'s Bushwalk')
     expect(sideTitle).toBeInTheDocument()
     expect(sideTitle).toBeVisible()
-    expect(sideTitle).toHaveTextContent('Goldie\'s Bushwalk')
+    expect(sideTitle).toBeTruthy()
   })
 
-  test('Tests that the rating displays', async () => {    
+    test('Component has background & background is visible', async () => {    
       const { getByTestId } = renderWithRedux(
       <SideBarItem selectedWalk={mockOnClick}
         activePage={mockOnClick}
@@ -83,9 +91,11 @@ test('Tests that the title is visible and contains the title', async () => {
         selectedWalkState={data}
         ratings={rating} 
       />)
-      const walkRating = getByTestId('rating')
-      expect(walkRating).toBeInTheDocument()
-      expect(walkRating).toHaveTextContent('rating')
+      const backGroundImage = getByTestId('style')
+      expect(backGroundImage).toHaveAttribute('style')
+      expect(backGroundImage).toBeInTheDocument()
+      expect(backGroundImage).toBeVisible()
+      expect(backGroundImage).toBeTruthy()
     })
 
   

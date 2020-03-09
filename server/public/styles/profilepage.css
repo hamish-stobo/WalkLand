@@ -1,26 +1,10 @@
   /** PROFILE PAGE CSS **/
   .profile-container {
-    display              : grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows   : 7.6% 46.2% 46.2%;
-    grid-template-areas  :
-
-      "profile-header profile-header profile-header profile-header"
-      "profile-top profile-top profile-top profile-top"
-      "profile-bottom profile-bottom profile-bottom profile-bottom";
-    ;
-    padding         : 0;
-    margin          : 0;
-    height          : 100vh;
-    width           : 100vw;
+    width           : 100%;
     background-color: #f4f4f4;
   }
 
   .profile-header {
-    /* grid-area         : profile-header;
-    background-color     : #020250;
-    padding              : 0;
-    margin               : 0; */
     display              : grid;
     grid-template-rows   : repeat(1, minmax(0, 1fr));
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -29,32 +13,46 @@
     background-color     : #ABD53C;
     max-height           : 100%;
     width                : 100%;
+    height: 78.6px;
   }
 
   .profile-header-btn-group {
     display    : inline-block;
     height     : 100%;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
 
   .profile-header-btn {
     background-color: rgb(155, 155, 155);
     border-style    : none;
     border-radius   : 0px;
-    color           : white;
+    /* color           : white; */
     text-align      : center;
     display         : inline-block;
     height          : 100%;
   }
 
   .profile-header-btn:hover {
-    background-color: rgb(116, 116, 116);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+
+  .hamish-del-btn {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    height: inherit !important;
+  }
+
+  .hamish-del-btn:hover {
+    width: 10em;
+    font-size: 1.1em;
   }
 
   .profile-top {
     grid-area       : profile-top;
     background-color: #f4f4f4;
-    padding         : 30px;
+    padding         : 35px 140px;
     /* border-style : groove;
     border-color    : rgb(204, 204, 204);
     border-width    : 0.1px; */
@@ -63,15 +61,7 @@
   .profile-top-children {
     display              : grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows   : 100%;
-    grid-template-areas  :
-
-      "profile-top-content-left profile-top-content-right"
-    ;
-
-    height    : 100%;
-    width     : 100%;
-    background: #FFFFFF;
+    padding: 30px;
   }
 
   .profile-top-content-right {
@@ -80,7 +70,7 @@
 
   .profile-top-content-left {
     background: white;
-    padding   : 10%;
+    padding   : 150px 50px;
   }
 
   .profile-cover-image {
@@ -91,51 +81,64 @@
 
   .profile-bottom-children {
     display              : grid;
-    grid-template-columns: 33% auto 33%;
-    grid-template-rows   : 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    padding-right: 170px;
+    padding-left: 170px;
+    padding-bottom: 50px;
+    /* grid-template-rows   : 100%;
     grid-template-areas  :
 
-      /* "space-top profile-bot-content space-bottom" */
       "profile-bot-container-left profile-bot-container-mid profile-bot-container-right"
-      /* "space-top profile-bot-content space-bottom" */
     ;
 
     height    : 100%;
     width     : 100%;
-    background: #FFFFFF;
+    background: #FFFFFF; */
   }
 
   .profile-bot-container-left {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-container-mid {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-container-right {
     background: white;
-    max-width : 100%;
-    height    : 100%;
-    padding   : 30px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
   }
 
   .profile-bot-content-card {
-    background   : white;
-    max-width    : 50%;
-    height       : 100%;
-    margin-left  : 25%;
     box-shadow   : 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px
   }
 
+  .profile-card-top {
+    background: grey;
+    max-width : 100%;
+    max-height    : 100%;
+  }
 
+  .profile-walk-image {
+    width : 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .profile-card-bot {
+    display: flex;
+    background: white;
+    max-width : 100%;
+    word-wrap: break-all;
+    text-align: center;
+    flex-direction: column;
+  }
 
 
 
@@ -165,32 +168,14 @@
     object-position: center right;
   }
 
-  .profile-cover {
-    grid-area       : profile-cover;
-    background-color: rgb(245, 243, 243);
-    /* border-style : groove;
-    border-color    : rgb(204, 204, 204);
-    border-radius   : 5px;
-    border-width    : 0.5px; */
-  }
-
   .profile-bottom {
     grid-area      : profile-bottom;
     padding        : 30px;
     padding-top    : 10px;
-    /* border-style: groove;
-    border-color   : rgb(204, 204, 204);
-    border-width   : 0.1px; */
   }
 
-  .profile-bottom-children {
-    height    : 100%;
-    width     : 100%;
-    background: #FFFFFF;
-  }
 
   .profile-logo {
-    /* max-height: 100%; */
     grid-column  : 2 / 3;
     padding      : 5px;
     width        : 30%;

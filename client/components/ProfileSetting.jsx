@@ -12,7 +12,7 @@ class ProfileSetting extends Component {
   render() {
     return (
       <>
-      {this.props.showButton === "false" ? null : <button onClick={() => { this.props.deleteProfile(this.props.auth); this.props.stateHandler; this.deleteToken(); this.props.activePage('map') }}>Delete profile?</button>}
+      {this.props.showButton === "false" ? null : <button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => { this.props.deleteProfile(this.props.auth); this.props.stateHandler; this.deleteToken(); this.props.activePage('map') }}>Delete profile?</button>}
       </>
     )
   }

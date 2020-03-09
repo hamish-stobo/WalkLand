@@ -11,9 +11,11 @@ router.get('/:username', (req, res) => {
         res.status(404).end()
       } else {
         delete returnedUser.password
-        console.log('from finduser route ', returnedUser)
         res.json(returnedUser)
       }
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 
