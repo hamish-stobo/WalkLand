@@ -26,7 +26,7 @@ class Details extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault()
+    // e.preventDefault()
     this.props.createReview({ ...this.state, username: this.props.login })
       .then(() => this.setState({
         rating: '',

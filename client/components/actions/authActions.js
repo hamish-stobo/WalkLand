@@ -36,7 +36,6 @@ export function registerUserAndLogin (user) {
           dispatch(setError(data.message))
           dispatch(loginUser(res.req._data.username))
         } else {
-          console.log(data.statusText)
           return request.post('http://localhost:3000/api/v1/auth/loginUser')
             .send({ username: user.username, password: user.password })
             .then(res => {

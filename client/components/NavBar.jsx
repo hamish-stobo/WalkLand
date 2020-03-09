@@ -23,8 +23,6 @@ class NavBar extends React.Component {
   }
 
   loginClickHandler = () => {
-    console.log('loginClickHandler')
-    console.log(this.state)
     this.setState({
       showLoginPopup: !this.state.showLoginPopup,
       showRegisterPopup: false

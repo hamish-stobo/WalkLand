@@ -23,9 +23,9 @@ export const SideBarItem = (props) => {
         className={
           `${selectedWalkState.id === id ? 'selected-walk' : 'sidebar-item'}`
         }
-        onClick={() => {
-          selectedWalk(walk)
-        }}
+        // onClick={() => {
+        //   selectedWalk(walk)
+        // }}
       >
         <h2 data-testid={'sideBarTitle'}> {title} </h2>
         {!!walkAverage ? <p data-testid={'rating'}>rating: {walkAverage}</p> : <p>No rating yet</p>}
@@ -34,7 +34,7 @@ export const SideBarItem = (props) => {
         {activePageState === 'details' &&
         <button data-testid='showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showDetails" onClick={() => activePage('details') }>Show Details</button>}
+        <button data-testid="showDetails" onClick={() =>  {selectedWalk(walk); activePage('details')} }>Show Details</button>}
         </>
         }
       </div>

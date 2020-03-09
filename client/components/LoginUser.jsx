@@ -22,7 +22,6 @@ class Login extends Component {
   }
 
   render () {
-    console.log('login component state ', this.state)
     return (
       <div className='popup'>
         <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
