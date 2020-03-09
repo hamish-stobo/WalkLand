@@ -1,4 +1,4 @@
-import { RECEIVE_PROFILE_INFO } from '../actions/userProfiles'
+import { RECEIVE_PROFILE_INFO } from '../actions/userProfile'
 
 function userProfiles (state = {}, action) {
   switch (action.type) {

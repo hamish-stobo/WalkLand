@@ -103,7 +103,7 @@ class Details extends Component {
                       <span  className="card-text" ><span className="hamish-bold">Review</span>: {item.review}</span><br></br>
                       <span className="card-text"><span className="hamish-bold">Author:</span> <a href="/#/" onClick={() => {
                         this.props.activePage('profile')
-                        this.props.viewProfile(item.author, true)
+                        this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
                     </li>
                     </>
@@ -152,7 +152,7 @@ class Details extends Component {
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
   activePage: (destination) => dispatch(activePage(destination)),
-  viewProfile: (username, isViewing) => dispatch(viewProfile(username, isViewing))
+  viewProfile: (username) => dispatch(viewProfile(username))
 })
 
 const mapStateToProps = state => {

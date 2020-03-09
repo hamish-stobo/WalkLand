@@ -6,7 +6,7 @@ import allWalks from './allWalks'
 import ratings from './ratings'
 import auth from './auth'
 import viewProfile from './viewProfile'
-import userProfiles from './userProfiles'
+import userProfile from './userProfile'
 import errorState from './errorState'
 
 export default combineReducers({
@@ -16,6 +16,6 @@ export default combineReducers({
   ratings,
   auth,
   viewProfile,
-  userProfiles,
+  userProfile,
   errorState
 })

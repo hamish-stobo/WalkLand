@@ -4,18 +4,16 @@ import { deleteProfile } from './actions/authActions'
 
 import activePage from './actions/activePage'
 
-class ProfileSetting extends Component {
-  deleteToken = () => {
+const DeleteUser = props => {
+  const deleteToken = () => {
     localStorage.removeItem('token')
   }
-
-  render() {
     return (
       <>
-      {this.props.showButton === "false" ? null : <button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => { this.props.deleteProfile(this.props.auth); this.props.stateHandler; this.deleteToken(); this.props.activePage('map') }}>Delete profile?</button>}
+      {<button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => { props.deleteProfile(props.auth); deleteToken(); props.activePage('map') }}>Delete profile?</button>}
       </>
     )
-  }
+  
 }
 
 const mapStateToProps = state => {
@@ -32,4 +30,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileSetting)
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteUser)

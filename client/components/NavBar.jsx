@@ -34,7 +34,7 @@ class NavBar extends React.Component {
       <>
         {this.props.login
           ? <div className="logged-in">
-            <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login, false) }}>Profile</button>
+            <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login) }}>Profile</button>
             <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
             <Logout />
           </div>
@@ -58,9 +58,6 @@ class NavBar extends React.Component {
             closePopup={this.loginClickHandler} />
           : null
         }
-
-        {/* <NavBarLogin />
-        <NavBarRegister /> */}
 
       </>
     )
