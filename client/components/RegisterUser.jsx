@@ -25,6 +25,7 @@ class RegisterUser extends Component {
   }
 
   render () {
+    console.log(this.state)
     return (
       <div className='popup'>
         <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
@@ -38,6 +39,7 @@ class RegisterUser extends Component {
               placeholder='Username'
               value={this.state.username}
               onChange={this.handleChange}
+              required
             />
 
             <label name="password-label">Password</label>
@@ -47,6 +49,7 @@ class RegisterUser extends Component {
               placeholder='Password'
               value={this.state.password}
               onChange={this.handleChange}
+              required
             />
 
             <label  name="bio-label">Bio</label>
@@ -64,7 +67,7 @@ class RegisterUser extends Component {
               value={this.state.avatarImage}
               onChange={this.handleChange}
             />
-            {this.state.avatarPhoto && <img src={this.state.avatarImage} placeholder="Your profile picture"/>}
+            {this.state.avatarImage && <img src={this.state.avatarImage} placeholder="Your profile picture"/>}
 
             <label name="coverPhoto-label">Cover Photo</label>
             <input 
@@ -74,7 +77,6 @@ class RegisterUser extends Component {
               onChange={this.handleChange}
             />
             {this.state.coverPhoto && <img src={this.state.coverPhoto} placeholder="Your cover photo"/>}
-
             <button name = 'submit' type='submit'>Submit</button>
           </form>
         </div>

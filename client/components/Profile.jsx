@@ -5,8 +5,6 @@ import { fetchProfileInfo } from './actions/userProfile'
 import activePage from './actions/activePage'
 import ProfileReviews from './ProfileReviews'
 import ProfileBanner from './ProfileBanner'
-import DeleteUser from './DeleteUser'
-import NavBar from './NavBar'
 
 class Profile extends Component {
 
@@ -18,12 +16,9 @@ class Profile extends Component {
     return (
       <>
         {this.props.userProfile === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
-          : <div>
-            <div className="profile-top">
-              <div className="profile-top-children">
-                <ProfileBanner user={this.props.viewProfile} welcome={`You are viewing ${this.props.viewProfile}'s profile`} />
-              </div>
-            </div>
+          : 
+          <div>
+            <ProfileBanner profile={this.props.userProfile} />
             <ProfileReviews />
           </div>
         }

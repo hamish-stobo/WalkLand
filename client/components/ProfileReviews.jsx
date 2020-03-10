@@ -12,7 +12,6 @@ class ProfileReviews extends Component {
       each.title =  this.props.allWalks.find(walk => walk.id === each.walkId).title
       return each
     })
-    console.log(profileReviews)
     return (
       <>
       <ul className="hamish-reviews-grid">
