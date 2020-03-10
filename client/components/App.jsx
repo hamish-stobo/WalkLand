@@ -27,18 +27,21 @@ class App extends Component {
             <LandingPage />
           </div>
         }
-        {this.props.activePage === 'map' &&
-          <div className="map-page-container">
-            <div className="logo-nav-container">
+        <div className="map-page-container">
+        {this.props.activePage !== 'landingPage' && 
+          <div className="logo-nav-container">
               <img className="logo-main" src='images/mainlogo.png' />
               <NavBar />
-            </div>
+          </div>
+        }
+        {this.props.activePage === 'map' &&
+          <div className="map-page-container">
             <div className="sidebar-container">
               <div className="items-container">
                 <SideBar />
               </div>
             </div>
-            <div className="map-containerz">
+            <div className="map-container">
               <DisplayMap />
             </div>
           </div>
@@ -46,10 +49,6 @@ class App extends Component {
 
         {this.props.activePage === 'details' &&
           <div className="map-page-container">
-            <div className="logo-nav-container">
-              <img className="logo-main" src='images/mainlogo.png' />
-              <NavBar />
-            </div>
             <div className="sidebar-container">
               <div className="items-container">
                 <SideBar />
@@ -62,8 +61,11 @@ class App extends Component {
         }
 
         {this.props.activePage === 'profile' &&
-          <Profile />
+          // <div className="profile-container">
+            <Profile />
+          // </div>
         }
+        </div>
       </>
     )
   }

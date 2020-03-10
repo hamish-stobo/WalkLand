@@ -6,6 +6,7 @@ import activePage from './actions/activePage'
 import ProfileReviews from './ProfileReviews'
 import ProfileBanner from './ProfileBanner'
 import DeleteUser from './DeleteUser'
+import NavBar from './NavBar'
 
 class Profile extends Component {
 
@@ -24,13 +25,14 @@ class Profile extends Component {
       <>
         {this.props.userProfile === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
           : <div className="profile-container">
-            <div className="profile-header">
+            <NavBar />
+            {/* <div className="profile-header">
               <img className='profile-logo' src='images/mainlogo.png' />
               <div className="profile-header-btn-group">
                 <button name = "home" className="profile-header-btn btn btn-link" onClick={() => this.props.activePage('map')}>Home</button>
                 {myProfile && <button name = "settings" className="profile-header-btn btn btn-link" onClick={() => this.setState({deleteClick: !this.state.deleteClick})}>Settings</button>}
               </div>
-            </div>
+            </div> */}
             {this.state.deleteClick && <DeleteUser />}
             <div className="profile-top">
               <div className="profile-top-children">

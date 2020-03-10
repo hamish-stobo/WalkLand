@@ -3,6 +3,9 @@ exports.up = (knex, Promise) => {
     table.increments().primary()
     table.text('username')
     table.text('password')
+    table.text('bio')
+    table.text('avatarImage')
+    table.text('coverPhoto')
   })
 }
 

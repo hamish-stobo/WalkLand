@@ -30,6 +30,7 @@ class NavBar extends React.Component {
   }
 
   render () {
+    const myProfile = this.props.viewProfile === this.props.login
     return (
       <>
         {this.props.login
@@ -47,6 +48,15 @@ class NavBar extends React.Component {
           </div>
         }
 
+        {this.props.activePage === 'profile' &&
+          <div className="profile-header">
+          <img className='profile-logo' src='images/mainlogo.png' />
+          <div className="profile-header-btn-group">
+            <button name = "home" className="profile-header-btn btn btn-link" onClick={() => this.props.activePage('map')}>Home</button>
+            {myProfile && <button name = "settings" className="profile-header-btn btn btn-link" onClick={() => this.setState({deleteClick: !this.state.deleteClick})}>Settings</button>}
+          </div>
+        </div>
+        }
         {this.state.showRegisterPopup
           ? <RegisterUser
             closePopup={this.registerClickHandler} />
@@ -73,7 +83,9 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    login: state.auth
+    login: state.auth,
+    activePage: state.activePage,
+    viewProfile: state.viewProfile
   }
 }
 
