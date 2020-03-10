@@ -5,10 +5,9 @@ const ProfileBanner = ({ profile }) => {
     <>
       <div>
         <span>{profile.username}</span>
-        <img src='https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg' />
-      </div>
-      <div >
-        <img src='https://lp-cms-production.imgix.net/features/2015/04/Routeburn-Track_cs.jpg' />
+        <img src={profile.avatarImage} />
+        <img src={profile.coverPhoto} />
+        <p>{profile.bio}</p>
       </div>
     </>
   )

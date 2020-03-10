@@ -22,7 +22,6 @@ function findUser (username, db = connection) {
   return db('users')
     .where('username', username)
     .first()
-    .select()
 }
 
 function registerUser (user, db = connection) {
@@ -33,7 +32,6 @@ function registerUser (user, db = connection) {
 function findUserJWT (id, db = connection) {
   return db('users')
     .where('id', id)
-    .select()
     .first()
 }
 

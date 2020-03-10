@@ -1,5 +1,6 @@
 import request from 'superagent'
 import { setError } from '../actions/setError'
+import { fetchProfileInfo } from './userProfile'
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -41,6 +42,7 @@ export function registerUserAndLogin (user) {
             .then(res => {
               localStorage.setItem('token', res.body.token)
               dispatch(loginUser(res.req._data.username))
+              dispatch(fetchProfileInfo(res.req._data.username))
             })
         }
       })
@@ -62,6 +64,7 @@ export function justLogin (user) {
         } else {
           localStorage.setItem('token', res.body.token)
           dispatch(loginUser(res.req._data.username))
+          dispatch(fetchProfileInfo(res.req._data.username))
         }
       })
       .catch(err => {

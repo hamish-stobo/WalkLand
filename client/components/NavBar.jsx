@@ -46,6 +46,7 @@ class NavBar extends React.Component {
           {this.props.login
           ? <div className="logged-in">
             <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login) }}>Profile</button>
+            <img width="20" src={this.props.userProfileState.avatarImage} alt="Profile picture icon"/>
             <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
             <Logout />
           </div>
@@ -86,7 +87,8 @@ const mapStateToProps = state => {
   return {
     login: state.auth,
     activePageState: state.activePage,
-    viewProfileState: state.viewProfile
+    viewProfileState: state.viewProfile,
+    userProfileState: state.userProfile
   }
 }
 

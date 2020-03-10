@@ -1,4 +1,3 @@
-
 .title-background {
   background-image: url('../images/Landingpage.jpg');
   background-repeat: no-repeat;
@@ -9,8 +8,6 @@
   z-index: -110;
   height: 100vh;
 }
-
-
 
 .btn-group-wrap {
   display: grid;

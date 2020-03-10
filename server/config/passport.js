@@ -30,10 +30,8 @@ passport.use(
             })
           }
           bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
-            db.registerUser({
-              username,
-              password: hashedPassword
-            }).then(user => {
+            req.body.password = hashedPassword
+            db.registerUser(req.body).then(user => {
               console.log('user created')
               return done(null, user)
             })
