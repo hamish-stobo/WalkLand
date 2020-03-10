@@ -61,9 +61,7 @@ class App extends Component {
         }
 
         {this.props.activePage === 'profile' &&
-          // <div className="profile-container">
             <Profile />
-          // </div>
         }
         </div>
       </>
