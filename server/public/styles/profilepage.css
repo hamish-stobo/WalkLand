@@ -19,14 +19,11 @@
   .profile-header-btn-group {
     display    : inline-block;
     height     : 100%;
-    /* margin-left: 50%; */
   }
 
   .profile-header-btn {
-    background-color: rgb(155, 155, 155);
     border-style    : none;
     border-radius   : 0px;
-    /* color           : white; */
     text-align      : center;
     display         : inline-block;
     height          : 100%;
@@ -53,9 +50,6 @@
     grid-area       : profile-top;
     background-color: #f4f4f4;
     padding         : 35px 140px;
-    /* border-style : groove;
-    border-color    : rgb(204, 204, 204);
-    border-width    : 0.1px; */
   }
 
   .profile-top-children {
@@ -86,15 +80,6 @@
     padding-right: 170px;
     padding-left: 170px;
     padding-bottom: 50px;
-    /* grid-template-rows   : 100%;
-    grid-template-areas  :
-
-      "profile-bot-container-left profile-bot-container-mid profile-bot-container-right"
-    ;
-
-    height    : 100%;
-    width     : 100%;
-    background: #FFFFFF; */
   }
 
   .profile-bot-container-left {

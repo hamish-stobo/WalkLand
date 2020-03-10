@@ -60,15 +60,11 @@
 }
 
 .hamish-review-card {
-  /* display: inline-block;
-  float: left; */
   width: 30% !important;
   max-width: 30%;
   margin: 5px;
   min-height: 270px;
   border-radius: 5px;
-  /* background: white;
-  padding: 10px; */
 }
 
 .hamish-stars-ul {
