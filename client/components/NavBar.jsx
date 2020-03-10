@@ -5,16 +5,14 @@ import RegisterUser from './RegisterUser'
 import Logout from './Logout'
 import LoginUser from './LoginUser'
 import viewProfile from './actions/viewProfile'
+import DeleteUser from './DeleteUser' 
 
 class NavBar extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
+    state = {
       showRegisterPopup: false,
       showLoginPopup: false,
-
+      settingsClick: false
     }
-  }
 
   registerClickHandler = () => {
     this.setState({
@@ -31,18 +29,18 @@ class NavBar extends React.Component {
   }
 
   render () {
-    const myProfile = this.props.viewProfile === this.props.login
+    const myProfile = this.props.viewProfileState === this.props.login
     return (
       <>
-        {this.props.activePage === 'profile' 
+        {this.props.activePageState === 'profile' 
         ? 
-        <div className="profile-header">
-          <img className='profile-logo' src='images/mainlogo.png' />
+          <>
           <div className="profile-header-btn-group">
-            <button name = "home" className="profile-header-btn btn btn-link" onClick={() => this.props.activePage('map')}>Home</button>
-            {myProfile && <button name = "settings" className="profile-header-btn btn btn-link" >}>Settings</button>}
-        </div>
-        </div>
+            <button name = "home" className="nav-bar-buttons" onClick={() => this.props.activePage('map')}>Home</button>
+            {myProfile && <button name = "settings" className="nav-bar-buttons" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
+          </div>
+          {this.state.settingsClick && <DeleteUser />}
+          </>
         :
         <>
           {this.props.login
@@ -80,15 +78,15 @@ class NavBar extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     activePage: (destination) => dispatch(activePage(destination)),
-    viewProfile: (username, isViewing) => dispatch(viewProfile(username, isViewing))
+    viewProfile: username => dispatch(viewProfile(username))
   }
 }
 
 const mapStateToProps = state => {
   return {
     login: state.auth,
-    activePage: state.activePage,
-    viewProfile: state.viewProfile
+    activePageState: state.activePage,
+    viewProfileState: state.viewProfile
   }
 }
 

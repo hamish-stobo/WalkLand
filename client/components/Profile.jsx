@@ -10,22 +10,15 @@ import NavBar from './NavBar'
 
 class Profile extends Component {
 
-  state = {
-    deleteClick: false
-  }
-
   componentDidMount = () => {
     this.props.fetchProfileInfo(this.props.viewProfile)
   }
 
   render () {
-    const myProfile = this.props.viewProfile === this.props.auth
-
     return (
       <>
         {this.props.userProfile === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
           : <div>
-            {this.state.deleteClick && <DeleteUser />}
             <div className="profile-top">
               <div className="profile-top-children">
                 <ProfileBanner user={this.props.viewProfile} welcome={`You are viewing ${this.props.viewProfile}'s profile`} />
