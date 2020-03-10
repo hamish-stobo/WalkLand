@@ -10,7 +10,8 @@ module.exports = {
   registerUser,
   deleteUser,
   getReviewRatings,
-  addReview
+  addReview,
+  editUser
 }
 
 function getUsers (db = connection) {
@@ -22,6 +23,12 @@ function findUser (username, db = connection) {
   return db('users')
     .where('username', username)
     .first()
+}
+
+function editUser (userObj, db = connection) {
+  return db('users')
+    .where('username', userObj.username)
+    .update(userObj)
 }
 
 function registerUser (user, db = connection) {
