@@ -36,7 +36,7 @@ class NavBar extends React.Component {
         ? 
           <>
           <div className="profile-header-btn-group">
-            <button name = "home" className="nav-bar-buttons" onClick={() => this.props.activePage('map')}>Home</button>
+            <button name = "home" className="nav-bar-buttons" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
             {myProfile && <button name = "settings" className="nav-bar-buttons" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
           </div>
           {this.state.settingsClick && <DeleteUser />}
