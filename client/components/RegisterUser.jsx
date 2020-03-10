@@ -5,7 +5,10 @@ import { registerUserAndLogin } from './actions/authActions'
 class RegisterUser extends Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    bio: '',
+    avatarImage: '',
+    coverPhoto: '',
   }
 
   handleChange = e => {
@@ -45,6 +48,32 @@ class RegisterUser extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
+
+            <label  name="bio-label">Bio</label>
+            <textarea 
+              name='bio'
+              placeholder='User bio'
+              value={this.state.bio}
+              onChange={this.handleChange}
+            />
+
+            <label name="avatarImage-label">Profile Picture</label>
+            <input 
+              name='avatarImage'
+              placeholder='Your profile image'
+              value={this.state.avatarImage}
+              onChange={this.handleChange}
+            />
+            {this.state.avatarPhoto && <img src={this.state.avatarImage} placeholder="Your profile picture"/>}
+
+            <label name="coverPhoto-label">Cover Photo</label>
+            <input 
+              name='coverPhoto'
+              placeholder='Link to a cover photo'
+              value={this.state.coverPhoto}
+              onChange={this.handleChange}
+            />
+            {this.state.coverPhoto && <img src={this.state.coverPhoto} placeholder="Your cover photo"/>}
 
             <button name = 'submit' type='submit'>Submit</button>
           </form>
