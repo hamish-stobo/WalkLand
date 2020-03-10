@@ -6,12 +6,14 @@ import Logout from './Logout'
 import LoginUser from './LoginUser'
 import viewProfile from './actions/viewProfile'
 import DeleteUser from './DeleteUser' 
+import EditUser from './EditUser'
 
 class NavBar extends React.Component {
     state = {
       showRegisterPopup: false,
       showLoginPopup: false,
-      settingsClick: false
+      settingsClick: false,
+      editing: false
     }
 
   registerClickHandler = () => {
@@ -39,7 +41,13 @@ class NavBar extends React.Component {
             <button name = "home" className="nav-bar-buttons" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
             {myProfile && <button name = "settings" className="nav-bar-buttons" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
           </div>
-          {this.state.settingsClick && <DeleteUser />}
+          {this.state.settingsClick && 
+              <>
+                <button onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
+                <DeleteUser />
+                {this.state.editing && <EditUser closePopup={() => this.setState({editing: false})} />}
+              </>
+          }
           </>
         :
         <>

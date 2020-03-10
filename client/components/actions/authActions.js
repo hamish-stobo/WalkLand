@@ -23,7 +23,7 @@ export const deleteUser = () => {
   return {
     type: DELETE_USER
   }
-}
+} 
 
 export function registerUserAndLogin (user) {
   return (dispatch) => {
@@ -71,6 +71,21 @@ export function justLogin (user) {
         dispatch(setError(err.message))
         throw err
       })
+  }
+}
+
+export function editProfile (userObject) {
+  return dispatch => {
+    return request.post('http://localhost:3000/api/v1/users/')
+      .send(userObject)
+      .then(() => 
+        dispatch(fetchProfileInfo(userObject.username))
+      )
+      .catch(err => {
+          dispatch(setError(err.message))
+          throw err
+      }
+      )
   }
 }
 
