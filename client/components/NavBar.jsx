@@ -35,8 +35,8 @@ class NavBar extends React.Component {
   }
 
   render () {
-    const myProfile = this.props.viewProfileState === this.props.login
-    console.log('avatar image when none given at register ', this.props.userProfileState.avatarImage)
+    const myProfile = this.props.viewProfileState === this.props.login.username
+    console.log('avatar image when none given at register ', this.props.login.avatarImage)
     return (
       <>
         {this.props.activePageState === 'profile' 
@@ -56,11 +56,11 @@ class NavBar extends React.Component {
           </>
         :
         <>
-          {this.props.login
+          {this.props.login.username
           ? <div className="logged-in">
             <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login) }}>Profile</button>
-            {this.props.userProfileState.avatarImage && <img width="20" src={this.props.userProfileState.avatarImage} alt="Profile picture icon"/>}
-            <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
+            {this.props.login.avatarImage && <img width="20" src={this.props.login.avatarImage} alt="Profile picture icon"/>}
+            <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login.username}</p>
             <Logout />
           </div>
 

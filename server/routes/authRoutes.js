@@ -49,7 +49,8 @@ router.post('/loginUser', (req, res, next) => {
           res.status(200).send({
             auth: true,
             token,
-            message: 'user found & logged in'
+            message: 'user found & logged in',
+            avatarImage: user.avatarImage
           })
         })
     }

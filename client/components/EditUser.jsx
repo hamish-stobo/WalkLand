@@ -15,7 +15,7 @@ class EditUser extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.editProfile({...this.state, username: this.props.auth})
+    this.props.editProfile({...this.state, username: this.props.auth.username})
       .then(this.props.closePopup)
       .catch(err => null)
   }

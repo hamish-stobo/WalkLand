@@ -6,7 +6,7 @@ import activePage from './actions/activePage'
 
 const DeleteUser = props => {
   const deleteFn = () => {
-    props.deleteProfile(props.auth)
+    props.deleteProfile(props.auth.username)
     .then(() => {
       localStorage.removeItem('token')
       props.settingsClick()

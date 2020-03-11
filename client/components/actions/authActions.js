@@ -6,10 +6,11 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const DELETE_USER = 'DELETE_USER'
 
-const loginUser = username => {
+const loginUser = (username, avatarImage) => {
   return {
     type: LOGIN,
-    username
+    username,
+    avatarImage
   }
 }
 
@@ -41,7 +42,7 @@ export function registerUserAndLogin (user) {
             .send({ username: user.username, password: user.password })
             .then(res => {
               localStorage.setItem('token', res.body.token)
-              dispatch(loginUser(res.req._data.username))
+              dispatch(loginUser(res.req._data.username, res.body.avatarImage))
               dispatch(fetchProfileInfo(res.req._data.username))
             })
         }
@@ -63,7 +64,7 @@ export function justLogin (user) {
           dispatch(setError(res.message))
         } else {
           localStorage.setItem('token', res.body.token)
-          dispatch(loginUser(res.req._data.username))
+          dispatch(loginUser(res.req._data.username, res.body.avatarImage))
           dispatch(fetchProfileInfo(res.req._data.username))
         }
       })

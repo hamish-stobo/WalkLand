@@ -17,7 +17,7 @@ class EditReview extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.editReview({...this.state, username: this.props.login, walkId: this.props.selectedWalk.id})
+        this.props.editReview({...this.state, username: this.props.login.username, walkId: this.props.selectedWalk.id})
         .then(this.props.hideEdit())
     }
 

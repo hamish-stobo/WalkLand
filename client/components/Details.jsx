@@ -25,7 +25,7 @@ class Details extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.props.createReview({ ...this.state, username: this.props.login, walkId: this.props.selectedWalk.id })
+    this.props.createReview({ ...this.state, username: this.props.login.username, walkId: this.props.selectedWalk.id })
       .then(() => this.setState({
         rating: 0,
         review: ''
@@ -38,7 +38,7 @@ class Details extends Component {
   }
 
   deleteReviewFn = reviewToDelete => {
-    this.props.deleteReview({...reviewToDelete, username: this.props.login})
+    this.props.deleteReview({...reviewToDelete, username: this.props.login.username})
     .then(() => console.log(success))
     .catch(err => console.log(err))
   }
@@ -59,7 +59,7 @@ class Details extends Component {
       }
     })
     const authorsArray = reviewsArray.map(review => review.author)
-    const reviewExists = authorsArray.indexOf(this.props.login)
+    const reviewExists = authorsArray.indexOf(this.props.login.username)
     const settings = {
       dots: false,
       infinite: true,
@@ -119,7 +119,7 @@ class Details extends Component {
                         this.props.activePage('profile')
                         this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
-                      {item.author === this.props.login && 
+                      {item.author === this.props.login.username && 
                       <div>
                         <button onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>
                         <button className="hamish-del-btn btn btn-danger" onClick={() => this.deleteReviewFn(item)}>Delete Review</button>
@@ -133,7 +133,7 @@ class Details extends Component {
             </ul>
           </div>
 
-          { reviewExists === -1 && this.props.login &&
+          { reviewExists === -1 && this.props.login.username &&
         <div data-testid={'form'} className="details-form">
           <form onSubmit={this.handleSubmit}>
             <h3>Share your experience!</h3>
@@ -156,14 +156,14 @@ class Details extends Component {
               onChange={this.handleChange}
             /><br/>
             <input  type='hidden' value={this.props.selectedWalk.id} name="walkId" />
-            <input type='hidden' value={this.props.login} name="username" />
+            <input type='hidden' value={this.props.login.username} name="username" />
             <button name = "submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
           }
 
           { 
-          reviewExists !== -1 && this.props.login && this.state.toggleEdit
+          reviewExists !== -1 && this.props.login.username && this.state.toggleEdit
            && <EditReview selectedReview={this.state.selectedReview} hideEdit={this.hideEdit} />
           }
         </div>
