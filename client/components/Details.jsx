@@ -40,6 +40,7 @@ class Details extends Component {
     const reviewsArray = ratings.filter(rating => rating.walkId === idWalk).map(data => {
       const stars = new Array(data.rating).fill('star')
       return {
+        walkId: data.walkId,
         rating: data.rating,
         review: data.review,
         author: data.username,
@@ -147,8 +148,8 @@ class Details extends Component {
           }
 
           { 
-          // reviewExists !== -1 && this.props.login && 
-          this.state.selectedReview && <EditReview selectedReview={this.state.selectedReview} />
+          reviewExists !== -1 && this.props.login
+           && <EditReview selectedReview={this.state.selectedReview} />
           }
         </div>
   

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { editReview } from './actions/reviewWalks'
 
 class EditReview extends Component {
 
@@ -13,6 +14,13 @@ class EditReview extends Component {
           [e.target.name]: e.target.value
         })
       }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const toSend = {
+            ...this.props.selectedReview
+        }
+    }
 
     render() {
         console.log('props available to editreview component ', this.props)
