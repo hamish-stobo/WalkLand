@@ -5,13 +5,15 @@ import { create } from 'react-test-renderer'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
+import EditReview from './EditReview'
 
 let slideIndex = 1
 
 class Details extends Component {
   state = {
     rating: 0,
-    review: ''
+    review: '',
+    selectedReview: null
   }
 
   handleChange = e => {
@@ -41,7 +43,7 @@ class Details extends Component {
         rating: data.rating,
         review: data.review,
         author: data.username,
-        stars
+        stars,
       }
     })
     const authorsArray = reviewsArray.map(review => review.author)
@@ -105,6 +107,8 @@ class Details extends Component {
                         this.props.activePage('profile')
                         this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
+                      {item.author === this.props.login && 
+                      <button onClick={() => this.setState({selectedReview: item})}>Edit review</button>}
                     </li>
                     </>
                 )
@@ -140,6 +144,11 @@ class Details extends Component {
             <button name = "submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
+          }
+
+          { 
+          // reviewExists !== -1 && this.props.login && 
+          this.state.selectedReview && <EditReview selectedReview={this.state.selectedReview} />
           }
         </div>
   
