@@ -12,7 +12,8 @@ module.exports = {
   getReviewRatings,
   addReview,
   editUser,
-  editReview
+  editReview,
+  deleteReview
 }
 
 function getUsers (db = connection) {
@@ -75,6 +76,17 @@ function editReview (review, db = connection) {
       username:  review.username
     })
     .update(review)
+}
+
+function deleteReview (review, db = connection) {
+  console.log('object given to deleteReview function in route ', review)
+  return db('ratingReviews')
+    .where({
+      walkId: review.walkId,
+      username:  review.username
+    })
+    .del()
+    .then(res => console.log('response from deleting review in db function ', res))
 }
 
 function parser (photosArray) {

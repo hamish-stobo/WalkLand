@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createReview } from './actions/reviewWalks'
+import { createReview, deleteReview } from './actions/reviewWalks'
 import { create } from 'react-test-renderer'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
@@ -35,6 +35,12 @@ class Details extends Component {
 
   hideEdit = () => {
     this.setState({toggleEdit: false})
+  }
+
+  deleteReviewFn = reviewToDelete => {
+    this.props.deleteReview({...reviewToDelete, username: this.props.login})
+    .then(() => console.log(success))
+    .catch(err => console.log(err))
   }
 
   render () {
@@ -114,7 +120,11 @@ class Details extends Component {
                         this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
                       {item.author === this.props.login && 
-                      <button onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>}
+                      <div>
+                        <button onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>
+                        <button className="hamish-del-btn btn btn-danger" onClick={() => this.deleteReviewFn(item)}>Delete Review</button>
+                      </div>
+                      }
                     </li>
                     </>
                 )
@@ -167,7 +177,8 @@ class Details extends Component {
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review)),
   activePage: (destination) => dispatch(activePage(destination)),
-  viewProfile: (username) => dispatch(viewProfile(username))
+  viewProfile: (username) => dispatch(viewProfile(username)),
+  deleteReview: reviewToDelete => dispatch(deleteReview(reviewToDelete))
 })
 
 const mapStateToProps = state => {

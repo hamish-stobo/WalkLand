@@ -44,4 +44,20 @@ router.post('/edit', (req, res) => {
   })
 })
 
+router.delete('/', (req, res) => {
+  console.log('request given to delete route ', req.body)
+  const newObject = {
+    walkId: req.body.walkId,
+    username: req.body.username,
+    rating: Number(req.body.rating),
+    review: req.body.review
+  }
+  db.deleteReview(newObject)
+    .then(success => res.json(success))
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+
+})
+
 module.exports = router
