@@ -164,7 +164,6 @@ button {
 
 .popup_inner form button {
   grid-column: 1 / -1;
-  grid-row: 4 / 5;
   padding: 0;
   margin: 3px;
   border: 0;
