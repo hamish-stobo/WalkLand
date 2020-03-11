@@ -17,9 +17,9 @@ class EditReview extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        const toSend = {
-            ...this.props.selectedReview
-        }
+        // const toSend = {
+        //     this.props.selectedReview.walkId
+        // }
     }
 
     render() {

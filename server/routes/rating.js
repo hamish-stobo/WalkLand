@@ -20,11 +20,28 @@ router.post('/', (req, res) => {
         review: req.body.review
       }
       db.addReview(newObject)
-        .then(resolve => res.json(''))
+        .then(res => res.json('success!'))
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
+})
+
+router.post('/edit', (req, res) => {
+  const newObject = {
+    walkId: req.body.walkId,
+    username: req.body.username,
+    rating: Number(req.body.rating),
+    review: req.body.review
+  }
+  db.editReview(newObject)
+      .then(resolve => {
+        console.log('res from db ', resolve)
+        res.json('')
+      })
+  .catch(err => {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 })
 
 module.exports = router

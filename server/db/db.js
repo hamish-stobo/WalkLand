@@ -11,7 +11,8 @@ module.exports = {
   deleteUser,
   getReviewRatings,
   addReview,
-  editUser
+  editUser,
+  editReview
 }
 
 function getUsers (db = connection) {
@@ -65,6 +66,15 @@ function getReviewRatings (db = connection) {
 function addReview (review, db = connection) {
   return db('ratingReviews')
     .insert(review)
+}
+
+function editReview (review, db = connection) {
+  return db('ratingReviews')
+    .where({
+      walkId: review.walkId,
+      username:  review.username
+    })
+    .update(review)
 }
 
 function parser (photosArray) {
