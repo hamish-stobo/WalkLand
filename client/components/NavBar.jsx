@@ -30,8 +30,13 @@ class NavBar extends React.Component {
     })
   }
 
+  settingsClick = () => {
+    this.setState({settingsClick: false})
+  }
+
   render () {
     const myProfile = this.props.viewProfileState === this.props.login
+    console.log('avatar image when none given at register ', this.props.userProfileState.avatarImage)
     return (
       <>
         {this.props.activePageState === 'profile' 
@@ -44,7 +49,7 @@ class NavBar extends React.Component {
           {this.state.settingsClick && 
               <>
                 <button onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
-                <DeleteUser />
+                <DeleteUser settingsClick={this.settingsClick} />
                 {this.state.editing && <EditUser closePopup={() => this.setState({editing: false})} />}
               </>
           }
@@ -54,7 +59,7 @@ class NavBar extends React.Component {
           {this.props.login
           ? <div className="logged-in">
             <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login) }}>Profile</button>
-            <img width="20" src={this.props.userProfileState.avatarImage} alt="Profile picture icon"/>
+            {this.props.userProfileState.avatarImage && <img width="20" src={this.props.userProfileState.avatarImage} alt="Profile picture icon"/>}
             <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login}</p>
             <Logout />
           </div>

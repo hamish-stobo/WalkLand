@@ -5,12 +5,18 @@ import { deleteProfile } from './actions/authActions'
 import activePage from './actions/activePage'
 
 const DeleteUser = props => {
-  const deleteToken = () => {
-    localStorage.removeItem('token')
+  const deleteFn = () => {
+    props.deleteProfile(props.auth)
+    .then(() => {
+      localStorage.removeItem('token')
+      props.settingsClick()
+      props.activePage('map')
+    })
   }
+  // { props.deleteProfile(props.auth); deleteToken(); props.activePage('map') }
     return (
       <>
-      {<button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => { props.deleteProfile(props.auth); deleteToken(); props.activePage('map') }}>Delete profile?</button>}
+      {<button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => deleteFn()}>Delete profile?</button>}
       </>
     )
   

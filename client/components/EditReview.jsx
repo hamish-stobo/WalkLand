@@ -17,13 +17,13 @@ class EditReview extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        // const toSend = {
-        //     this.props.selectedReview.walkId
-        // }
+        this.props.editReview({...this.state, username: this.props.login, walkId: this.props.selectedWalk.id})
+        .then(this.props.hideEdit())
     }
 
     render() {
         console.log('props available to editreview component ', this.props)
+        console.log('state in editreview component ', this.state)
         return (
             <div data-testid={'form'} className="details-form">
             <form onSubmit={this.handleSubmit}>
@@ -57,6 +57,15 @@ class EditReview extends Component {
     }
 }
 
+const mapStateToProps = state => {
+  return {
+    selectedWalk: state.selectedWalk,
+    login: state.auth
+  }
+}
 
+const mapDispatchToProps = dispatch => ({
+  editReview: review => dispatch(editReview(review))
+})
 
-export default connect()(EditReview)
+export default connect(mapStateToProps, mapDispatchToProps)(EditReview)

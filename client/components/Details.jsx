@@ -13,7 +13,8 @@ class Details extends Component {
   state = {
     rating: 0,
     review: '',
-    selectedReview: null
+    selectedReview: {},
+    toggleEdit: false
   }
 
   handleChange = e => {
@@ -30,6 +31,10 @@ class Details extends Component {
         review: ''
       }))
       .catch(err => console.log(err))
+  }
+
+  hideEdit = () => {
+    this.setState({toggleEdit: false})
   }
 
   render () {
@@ -109,7 +114,7 @@ class Details extends Component {
                         this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
                       {item.author === this.props.login && 
-                      <button onClick={() => this.setState({selectedReview: item})}>Edit review</button>}
+                      <button onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>}
                     </li>
                     </>
                 )
@@ -148,8 +153,8 @@ class Details extends Component {
           }
 
           { 
-          reviewExists !== -1 && this.props.login
-           && <EditReview selectedReview={this.state.selectedReview} />
+          reviewExists !== -1 && this.props.login && this.state.toggleEdit
+           && <EditReview selectedReview={this.state.selectedReview} hideEdit={this.hideEdit} />
           }
         </div>
   

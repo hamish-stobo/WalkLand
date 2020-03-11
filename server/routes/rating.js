@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         review: req.body.review
       }
       db.addReview(newObject)
-        .then(res => res.json('success!'))
+        .then(() => res.json('success!'))
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
