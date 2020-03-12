@@ -48,17 +48,6 @@ ul {
   margin: 0
 }
 
-button {
-  padding: 3px 5px 3px 5px;
-  border-radius: 5px;
-  border: 2px solid #ABD53C ;
-  background-color: #ABD53C;
-  color: white;
-  font-style: bold;
-  text-transform: capitalize;
-  font-size: 12px;
-}
-
 .map-page-container {
   /* background-color: black; */
   display: grid;

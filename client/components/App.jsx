@@ -23,17 +23,17 @@ class App extends Component {
       <>
       {this.props.errorState !== '' && <ErrorComponent /> }
         {this.props.activePage === 'landingPage' &&
-          <div className="landing-page-container title-background">
+          <div className="landing-page-container title-background-lp">
             <LandingPage />
           </div>
         }
-        <div className="map-page-container">
+        
         {this.props.activePage !== 'landingPage' && 
+        <div className="map-page-container">
           <div className="logo-nav-container">
               <img className="logo-main" src='images/mainlogo.png' />
               <NavBar />
           </div>
-        }
         {this.props.activePage === 'map' &&
           <div className="map-page-container">
             <div className="sidebar-container">
@@ -64,6 +64,7 @@ class App extends Component {
             <Profile />
         }
         </div>
+        }
       </>
     )
   }
