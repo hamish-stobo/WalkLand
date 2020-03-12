@@ -12,22 +12,26 @@
 .fullscreen-bg {
   box-sizing: border-box;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
 }
 
 .img-lp {
   border: none;
   width: 70%;
   margin: 0 auto;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .btn-lp {
   display: block;
-  min-width: 130px;
-  min-height: 30px;
-  margin: 0 auto;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  min-width: 140px;
+  min-height: 40px;
+  margin: auto;
   border-radius: 18px;
   background-color: rgb(171, 213, 60);
   border: 2px solid rgb(171, 213, 60);
