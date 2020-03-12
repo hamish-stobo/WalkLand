@@ -1,6 +1,7 @@
 import request from 'superagent'
 import { setError } from '../actions/setError'
 import { fetchProfileInfo } from './userProfile'
+import { getReviewRatings } from './allWalks'
 
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
@@ -97,6 +98,7 @@ export function deleteProfile (username) {
       .set('authorization', `bearer ${localStorage.token}`)
       .then(res => {
         dispatch(deleteUser())
+        dispatch(getReviewRatings())
       })
       .catch(err => {
         dispatch(setError(err.message))

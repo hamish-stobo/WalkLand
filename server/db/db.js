@@ -45,9 +45,14 @@ function findUserJWT (id, db = connection) {
 }
 
 function deleteUser (username, db = connection) {
-  return db('users')
+    return db('ratingReviews')
     .where('username', username)
     .del()
+    .then(() => {
+      return db('users')
+      .where('username', username)
+      .del()
+    })
 }
 
 function getWalks (db = connection) {
@@ -79,7 +84,6 @@ function editReview (review, db = connection) {
 }
 
 function deleteReview (review, db = connection) {
-  console.log('object given to deleteReview function in route ', review)
   return db('ratingReviews')
     .where({
       walkId: review.walkId,
