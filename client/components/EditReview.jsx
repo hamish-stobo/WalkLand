@@ -22,8 +22,6 @@ class EditReview extends Component {
     }
 
     render() {
-        console.log('props available to editreview component ', this.props)
-        console.log('state in editreview component ', this.state)
         return (
             <div data-testid={'form'} className="details-form">
             <form onSubmit={this.handleSubmit}>

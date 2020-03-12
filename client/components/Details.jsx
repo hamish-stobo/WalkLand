@@ -39,7 +39,7 @@ class Details extends Component {
 
   deleteReviewFn = reviewToDelete => {
     this.props.deleteReview({...reviewToDelete, username: this.props.login.username})
-    .then(() => console.log(success))
+    .then(res => console.log(res))
     .catch(err => console.log(err))
   }
 

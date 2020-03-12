@@ -36,7 +36,6 @@ class NavBar extends React.Component {
 
   render () {
     const myProfile = this.props.viewProfileState === this.props.login.username
-    console.log('avatar image when none given at register ', this.props.login.avatarImage)
     return (
       <>
         {this.props.activePageState === 'profile' 

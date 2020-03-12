@@ -90,7 +90,6 @@ function deleteReview (review, db = connection) {
       username:  review.username
     })
     .del()
-    .then(res => console.log('response from deleting review in db function ', res))
 }
 
 function parser (photosArray) {

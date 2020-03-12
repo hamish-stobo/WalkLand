@@ -25,7 +25,6 @@ class RegisterUser extends Component {
   }
 
   render () {
-    console.log(this.state)
     return (
       <div className='popup'>
         <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
