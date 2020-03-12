@@ -58,7 +58,7 @@ class NavBar extends React.Component {
         <>
           {this.props.login.username
           ? <div className="logged-in">
-            <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login) }}>Profile</button>
+            <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login.username) }}>Profile</button>
             {this.props.login.avatarImage && <img width="20" src={this.props.login.avatarImage} alt="Profile picture icon"/>}
             <p id = "profile-name-nav" className="label-white-text x-y-centre">Welcome<br />{this.props.login.username}</p>
             <Logout />

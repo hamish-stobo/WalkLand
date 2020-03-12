@@ -1,9 +1,31 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import EditReview from './EditReview'
+import { deleteReview } from './actions/reviewWalks'
 
 class ProfileReviews extends Component {
 
+  state = {
+    showEdit: false,
+    selectedReview: {}
+  }
+
+  giveToEdit = review => {
+    this.setState({
+      showEdit: !this.state.showEdit,
+      selectedReview: review
+    })
+  }
+
+  deleteReviewFn = reviewToDelete => {
+    this.props.deleteReview({...reviewToDelete, username: this.props.auth.username})
+    .then(() => console.log(success))
+    .catch(err => console.log(err))
+  }
+
   render () {
+    console.log('props available to profile reviews component, ', this.props)
+    const myProfile = this.props.viewProfile === this.props.auth.username
     const profileReviews = this.props.ratings
     .filter(rating => rating.username === this.props.viewProfile)
     .map(each => {
@@ -18,7 +40,7 @@ class ProfileReviews extends Component {
       {
         profileReviews.map((review, idx) => 
         <>
-        <div key={idx} className="hamish-review-card">
+        <div key={idx}>
             <img className="profile-walk-image" src={review.mainPhoto}/>
             <div className="profile-card-bot">
               <span>Name of walk: {review.title}</span>
@@ -29,10 +51,17 @@ class ProfileReviews extends Component {
               (<img key={idx} className="hamish-stars-li" width="25" src="https://image.flaticon.com/icons/svg/148/148841.svg" alt={`Image of ${star}`}/>))}
               </div>
             </div>
+            {myProfile &&
+            <div>
+              <button onClick={() => this.giveToEdit(review)}>Edit walk</button>
+              <button className="hamish-del-btn btn btn-danger" onClick={() => this.deleteReviewFn(review)}>Delete Review</button>
+            </div>
+            }
         </div>
         </>
         )}
       </ul>
+      {this.state.showEdit && <EditReview selectedReview={this.state.selectedReview} hideEdit={() => this.setState({showEdit: false})}/>}
       </>
     )
   }
@@ -48,4 +77,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ProfileReviews)
+const mapDispatchToProps = dispatch => ({
+  deleteReview: reviewToDelete => dispatch(deleteReview(reviewToDelete))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileReviews)
