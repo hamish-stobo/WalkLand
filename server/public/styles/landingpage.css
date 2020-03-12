@@ -9,8 +9,18 @@
   height: 100vh;
 }
 
+.fullscreen-bg {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .img-lp {
   border: none;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .btn-lp {
