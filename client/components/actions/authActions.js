@@ -78,7 +78,8 @@ export function justLogin (user) {
 
 export function editProfile (userObject) {
   return dispatch => {
-    return request.post('http://localhost:3000/api/v1/users/')
+    return request.post('http://localhost:3000/api/v1/auth/editUser')
+      .set('authorization', `bearer ${localStorage.token}`)
       .send(userObject)
       .then(() => 
         dispatch(fetchProfileInfo(userObject.username))

@@ -19,14 +19,4 @@ router.get('/:username', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
-  console.log('object given to post route in users ', req.body)
-  db.editUser(req.body)
-    .then(response => {
-      response === 1 && res.send('Profile was successfully updated')
-      response === 0 && res.send('Failed to update profile')
-    })
-    .catch(err => res.send(err))
-})
-
 module.exports = router

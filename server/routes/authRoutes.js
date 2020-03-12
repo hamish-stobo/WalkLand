@@ -57,6 +57,44 @@ router.post('/loginUser', (req, res, next) => {
   })(req, res, next)
 })
 
+router.post('/editUser', (req, res, next) => {
+  console.log('object given to post route in users ', req.body)
+  passport.authenticate('jwt', { session: false }, (err, user, info) => {
+    if (err) {
+      console.error(err)
+    }
+    if (info !== undefined) {
+      console.error(info.message)
+      res.statusMessage = `${info.message}`
+      res.status(403).end()
+    } else {
+      console.log('username in from client ', req.body.username, 'username from jwt auth ', user.username)
+      if (req.body.username === user.username) {
+        db.editUser(req.body)
+          .then((userInfo) => {
+            if (userInfo === 1) {
+              console.log('user updated!')
+              res.statusMessage = `${'user was updated in db!'}`
+              res.status(200).end()
+            } else {
+              res.statusMessage = 'no user with that username to delete'
+              res.status(404).end()
+            }
+          })
+          .catch((error) => {
+            console.log(error)
+            res.statusMessage = 'problem communicating with db'
+            res.status(500).end()
+          })
+      } else {
+        console.error('jwt id and username do not match')
+        res.statusMessage = 'You are not authorized'
+        res.status(403).end()
+      }
+    }
+  })(req, res, next)
+})
+
 router.delete('/deleteUser/:username', (req, res, next) => {
   console.log('request in route ', req.params)
   passport.authenticate('jwt', { session: false }, (err, user, info) => {

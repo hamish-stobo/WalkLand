@@ -24,6 +24,9 @@ class App extends Component {
       {this.props.errorState !== '' && <ErrorComponent /> }
         {this.props.activePage === 'landingPage' &&
           <div className="landing-page-container title-background-lp">
+              {/* <video className="video-lp" playsInline autoPlay muted loop src="landingvideo1.mp4" height="100">
+                Your browser does not support the video tag.
+              </video> */}
             <LandingPage />
           </div>
         }
@@ -35,7 +38,7 @@ class App extends Component {
               <NavBar />
           </div>
         {this.props.activePage === 'map' &&
-          <div className="map-page-container">
+          <div>
             <div className="sidebar-container">
               <div className="items-container">
                 <SideBar />

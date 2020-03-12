@@ -64,7 +64,7 @@ ul {
   height: 100%;
   width: 100%;
   grid-column: 2 / -1;
-  grid-row: 2 / -1;
+  grid-row: 1 / -1;
 }
 
 .map-containerz {
@@ -74,7 +74,7 @@ ul {
   height: 100%;
   width: 100%;
   grid-column: 2 / -1;
-  grid-row: 2 / -1;
+  grid-row: 1 / -1;
 }
 
 .popup {
