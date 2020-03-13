@@ -58,6 +58,7 @@ class RegisterUser extends Component {
               placeholder='User bio'
               value={this.state.bio}
               onChange={this.handleChange}
+              required
             />
 
             <label name="avatarImage-label">Profile Picture</label>
@@ -67,6 +68,7 @@ class RegisterUser extends Component {
               placeholder='Your profile image'
               value={this.state.avatarImage}
               onChange={this.handleChange}
+              required
             />
             {this.state.avatarImage && <img className="form-profile-img" width="25" src={this.state.avatarImage} placeholder="Your profile picture"/>}
 
@@ -77,9 +79,10 @@ class RegisterUser extends Component {
               placeholder='Link to a cover photo'
               value={this.state.coverPhoto}
               onChange={this.handleChange}
+              required
             />
             {this.state.coverPhoto && <img className="form-cover-img" src={this.state.coverPhoto} width="25" placeholder="Your cover photo"/>}
-            <button name='submit' type='submit'>Submit</button>
+            <button className="btn greenify" name='submit' type='submit'>Submit</button>
           </form>
         </div>
       </div>

@@ -161,7 +161,6 @@ ul {
   border: 0;
   font-size: 1rem;
   border-radius: 10px;
-  background-color: #757575;
   width: 50%;
   height: 40px;
   justify-self: center;
@@ -199,4 +198,18 @@ ul {
 .map-containerz > div > div > div {
   width: 70% !important;
   height: 91.6665% !important;
+}
+
+.greenify {
+  background-color: #abd53c;
+  color: black;
+}
+
+.greenify:hover {
+  background: black;
+  color: #abd53c;
+}
+
+.h-r-b:hover {
+  font-size: 1.1em;
 }

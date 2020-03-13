@@ -121,8 +121,8 @@ class Details extends Component {
                       }}>{item.author}</a></span>
                       {item.author === this.props.login.username && 
                       <div>
-                        <button onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>
-                        <button className="hamish-del-btn btn btn-danger" onClick={() => this.deleteReviewFn(item)}>Delete Review</button>
+                        <button className="btn greenify" onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>
+                        <button className="btn btn-danger h-r-b" onClick={() => this.deleteReviewFn(item)}>Delete Review</button>
                       </div>
                       }
                     </li>

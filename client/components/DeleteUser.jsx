@@ -13,10 +13,9 @@ const DeleteUser = props => {
       props.activePage('map')
     })
   }
-  // { props.deleteProfile(props.auth); deleteToken(); props.activePage('map') }
     return (
       <>
-      {<button className="hamish-del-btn btn btn btn-danger" name = "delete" onClick={() => deleteFn()}>Delete profile?</button>}
+      {<button className="btn btn-danger h-r-b" name = "delete" onClick={() => deleteFn()}>Delete profile?</button>}
       </>
     )
   

@@ -42,12 +42,12 @@ class NavBar extends React.Component {
         ? 
           <div className="profile-header-btn-group">
           <>
-            <button name = "home" className="home-btn" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
-            {myProfile && <button name = "settings" className="settings-btn" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
+            <button name = "home" className="home-btn btn greenify" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
+            {myProfile && <button name = "settings" className="settings-btn btn greenify" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
           </>
           {this.state.settingsClick && 
               <>
-                <button className="edit-profile-btn" onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
+                <button className="edit-profile-btn btn greenify" onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
                 <DeleteUser settingsClick={this.settingsClick} />
                 {this.state.editing && <EditUser closePopup={() => this.setState({editing: false})} />}
               </>
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
         <>
           {this.props.login.username
           ? <div className="logged-in">
-            <button name = "profile" className="nav-bar-buttons" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login.username) }}>Profile</button>
+            <button name = "profile" className="nav-bar-buttons greenify btn" onClick={() => { this.props.activePage('profile'); this.props.viewProfile(this.props.login.username) }}>Profile</button>
             {this.props.login.avatarImage && <img className="nav-img-icon" src={this.props.login.avatarImage} alt="Profile picture icon"/>}
             <p className="profile-name-nav" >Welcome<br />{this.props.login.username}</p>
             <Logout />

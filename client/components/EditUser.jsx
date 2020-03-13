@@ -56,7 +56,7 @@ class EditUser extends Component {
               onChange={this.handleChange}
             />
             {this.state.coverPhoto && <img className="form-cover-img" src={this.state.coverPhoto} width="25" placeholder="Your cover photo"/>}
-            <button name='submit' type='submit'>Submit</button>
+            <button className="btn greenify" name='submit' type='submit'>Submit</button>
           </form>
         </div>
       </div>

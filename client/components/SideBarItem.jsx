@@ -38,9 +38,9 @@ export const SideBarItem = (props) => {
         <>
 
         {activePageState === 'details' &&
-        <button data-testid='showMap' name='showMap' onClick={() => activePage('map')}>Show Map</button>}
+        <button className="greenify btn" data-testid='showMap' name='showMap' onClick={() => activePage('map')}>Show Map</button>}
         {activePageState === 'map' &&
-        <button data-testid="showDetails" name='showDetails' onClick={() => activePage('details') }>Show Details</button>}
+        <button className="greenify btn" data-testid="showDetails" name='showDetails' onClick={() => activePage('details') }>Show Details</button>}
         </>
         }
       </div>

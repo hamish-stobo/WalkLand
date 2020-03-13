@@ -46,7 +46,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
 
-            <button name = 'login' type='submit'>Login</button>
+            <button name='login' type='submit' className="greenify">Login</button>
           </form>
         </div>
       </div>
