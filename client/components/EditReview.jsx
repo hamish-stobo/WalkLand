@@ -23,7 +23,7 @@ class EditReview extends Component {
 
     render() {
         return (
-            <div data-testid={'form'} className="details-form">
+            <div data-testid={'form'}>
             <form onSubmit={this.handleSubmit}>
               <h3>Edit your review!</h3>
               <label  className="right-margin">Rating</label>

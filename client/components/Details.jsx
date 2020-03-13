@@ -163,7 +163,10 @@ class Details extends Component {
 
           { 
           reviewExists !== -1 && this.props.login.username && this.state.toggleEdit
-           && <EditReview selectedReview={this.state.selectedReview} hideEdit={this.hideEdit} />
+           && 
+           <div className="details-form">
+             <EditReview selectedReview={this.state.selectedReview} hideEdit={this.hideEdit} />
+           </div>
           }
         </div>
   

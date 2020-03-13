@@ -35,6 +35,10 @@ class ProfileReviews extends Component {
     })
     return (
       <>
+      {profileReviews.length === 0 
+      ? <span className="no-reviews-message">No reviews yet</span>
+      :
+      <>
       <ul className="profile-reviews-grid">
       {
         profileReviews.map((review, idx) => 
@@ -60,7 +64,13 @@ class ProfileReviews extends Component {
         </>
         )}
       </ul>
-      {this.state.showEdit && <EditReview selectedReview={this.state.selectedReview} hideEdit={() => this.setState({showEdit: false})}/>}
+      {this.state.showEdit && 
+      <div className="profile-edit-review">
+        <EditReview selectedReview={this.state.selectedReview} hideEdit={() => this.setState({showEdit: false})}/>
+      </div>
+      }
+      </>
+      }
       </>
     )
   }
