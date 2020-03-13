@@ -113,9 +113,8 @@ ul {
 .popup_inner form {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr 1fr 2fr 1fr;
   height: auto;
-  vertical-align: middle;
   margin: auto auto;
 }
 
