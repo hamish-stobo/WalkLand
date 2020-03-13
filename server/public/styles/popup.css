@@ -79,3 +79,9 @@
   font-weight: bold;
 }
 
+.form-img {
+  grid-column: 1 / span 2;
+  border-radius: 60px;
+  width: 100px;
+}
+

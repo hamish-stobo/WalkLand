@@ -66,7 +66,7 @@ class RegisterUser extends Component {
               value={this.state.avatarImage}
               onChange={this.handleChange}
             />
-            {this.state.avatarImage && <img width="25" src={this.state.avatarImage} placeholder="Your profile picture"/>}
+            {this.state.avatarImage && <img className="form-profile-img" width="25" src={this.state.avatarImage} placeholder="Your profile picture"/>}
 
             <label name="coverPhoto-label">Cover Photo</label>
             <input 
@@ -75,7 +75,7 @@ class RegisterUser extends Component {
               value={this.state.coverPhoto}
               onChange={this.handleChange}
             />
-            {this.state.coverPhoto && <img src={this.state.coverPhoto} width="25" placeholder="Your cover photo"/>}
+            {this.state.coverPhoto && <img className="form-cover-img" src={this.state.coverPhoto} width="25" placeholder="Your cover photo"/>}
             <button name='submit' type='submit'>Submit</button>
           </form>
         </div>
