@@ -1,11 +1,11 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config()
+// }
 
 const express = require('express')
 const router = express.Router()
+require('dotenv').config()
 
-const bcrypt = require('bcrypt')
 const passport = require('passport')
 const jwtSecret = process.env.SECRET_KEY
 const jwt = require('jsonwebtoken')

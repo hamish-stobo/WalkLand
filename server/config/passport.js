@@ -8,7 +8,6 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const JWTstrategy = require('passport-jwt').Strategy
 const ExtractJWT = require('passport-jwt').ExtractJwt
-const env = require('dotenv').config()
 
 passport.use(
   'register',
@@ -78,7 +77,7 @@ passport.use(
 
 const opts = {
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.SECRET_KEY
+  secretOrKey: jwtSecret
 }
 
 //
