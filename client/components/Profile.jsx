@@ -17,10 +17,10 @@ class Profile extends Component {
       <>
         {this.props.userProfile === 'error' ? <a className="alert alert-danger hamish-profile-deleted" href="/#/" onClick={() => this.props.activePage('details')}>Profile not found. Click to go back.</a>
           : 
-          <div>
+          <>
             <ProfileBanner profile={this.props.userProfile} />
             <ProfileReviews />
-          </div>
+          </>
         }
       </>
     )
@@ -29,10 +29,8 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    username: state.auth,
     userProfile: state.userProfile,
     viewProfile: state.viewProfile,
-    auth: state.auth
   }
 }
 

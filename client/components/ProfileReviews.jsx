@@ -36,11 +36,11 @@ class ProfileReviews extends Component {
     })
     return (
       <>
-      <ul className="hamish-reviews-grid">
+      <ul className="profile-reviews-grid">
       {
         profileReviews.map((review, idx) => 
         <>
-        <div key={idx}>
+        <div className="hamish-review-card" key={idx}>
             <img className="profile-walk-image" src={review.mainPhoto}/>
             <div className="profile-card-bot">
               <span>Name of walk: {review.title}</span>

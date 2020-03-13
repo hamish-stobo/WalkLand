@@ -41,6 +41,40 @@
   background-color: #000000;
 }
 
+.profile-header-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.home-btn {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.settings-btn {
+  grid-row: 1 / 2;
+  grid-column: 2/ 3;
+}
+
+.edit-profile-btn {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.hamish-del-btn {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  height: inherit !important;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.hamish-del-btn:hover {
+  width: 10em;
+  font-size: 1.1em;
+}
+
 /* FOR TESTING FROM HERE */
 #nav {
   opacity: 1;

@@ -105,9 +105,10 @@ ul {
   border-radius: 2px;
   background: white;
   z-index: 99;
-  height: auto;
+  height: 100%;
   width: 85%;
   padding: 15px;
+  overflow: scroll
 }
 
 .popup_inner form {

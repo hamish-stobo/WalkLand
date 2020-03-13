@@ -40,19 +40,19 @@ class NavBar extends React.Component {
       <>
         {this.props.activePageState === 'profile' 
         ? 
-          <>
           <div className="profile-header-btn-group">
-            <button name = "home" className="nav-bar-buttons" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
-            {myProfile && <button name = "settings" className="nav-bar-buttons" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
-          </div>
+          <>
+            <button name = "home" className="home-btn" onClick={() => {this.props.activePage('map'); this.setState({settingsClick: false})}}>Home</button>
+            {myProfile && <button name = "settings" className="settings-btn" onClick={() => this.setState({settingsClick: !this.state.settingsClick})}>Settings</button>}
+          </>
           {this.state.settingsClick && 
               <>
-                <button onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
+                <button className="edit-profile-btn" onClick={() => this.setState({editing: !this.state.editing})}>Edit Profile</button>
                 <DeleteUser settingsClick={this.settingsClick} />
                 {this.state.editing && <EditUser closePopup={() => this.setState({editing: false})} />}
               </>
           }
-          </>
+          </div>
         :
         <>
           {this.props.login.username

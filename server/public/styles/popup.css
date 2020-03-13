@@ -33,12 +33,12 @@
   border: 0px;
   text-decoration: none !important;
   text-align: center;
-  display:block;
-  height: 100px;
   margin: 12% auto auto auto;
   font-size: 1.3em;
   padding: 25px;
-  max-width: 35%;
+  grid-row: 3 / 8;
+  grid-column: 3 / 6;
+  min-width: 280px;
 }
 
 .hamish-profile-deleted:hover {
