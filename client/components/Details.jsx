@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createReview, deleteReview } from './actions/reviewWalks'
-import { create } from 'react-test-renderer'
 import Slider from 'react-slick'
 import activePage from './actions/activePage'
 import viewProfile from './actions/viewProfile'
