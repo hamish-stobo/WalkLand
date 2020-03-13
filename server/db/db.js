@@ -72,7 +72,7 @@ function getReviewRatings (db = connection) {
 function addReview (review, db = connection) {
   console.log('review given to pg for insert ', review)
   return db('ratingReviews')
-    .insert(review)
+    .insert({walkId: review.walkId, username: review.username, rating: review.rating, review: review.review})
     .then(res => console.log(res))
     .catch(err => console.log ('error from pg ', err))
 }
