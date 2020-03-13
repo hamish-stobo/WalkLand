@@ -22,7 +22,7 @@ exports.seed = function (knex) {
           elevationGain: 200,
           timeTaken: '2 Hours',
           difficulty: 'Intermediate',
-          Surface: 'There are numerous stream crossings',
+          surface: 'There are numerous stream crossings',
           description: 'Goldies Bush and Mokoroa Falls Loop is a 6.0 kilometer lightly trafficked loop trail located near Auckland, Auckland, New Zealand that features a waterfall and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips.'
         },
         { id: 2,
@@ -42,7 +42,7 @@ exports.seed = function (knex) {
           elevationGain: 345,
           timeTaken: '30 Minutes',
           difficulty: 'beginner',
-          Surface: 'Concrete foot path and large grass lawns to walk around on',
+          surface: 'Concrete foot path and large grass lawns to walk around on',
           description: 'Western Springs Park Walk is a very easy 1.8k walk that will take you around 30 mins to complete. Highlights of the Western Springs Park Walk are the eels and the free tram ride around Western Spring Park. It surrounds a natural spring-fed lake, one of Auckland\'s early water supplies.'
         },
         {
@@ -63,7 +63,7 @@ exports.seed = function (knex) {
           elevationGain: 572,
           timeTaken: '3 Hours',
           difficulty: 'Intermediate',
-          Surface: 'traverses coastal cliffs and is uneven and muddy in places',
+          surface: 'traverses coastal cliffs and is uneven and muddy in places',
           description: 'Te Henga Walkway is a 10.0 kilometer lightly trafficked point-to-point trail located near Henderson, Auckland, New Zealand that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.'
 
         },
@@ -85,7 +85,7 @@ exports.seed = function (knex) {
           elevationGain: 1442,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'Formed track – lots of loose, fine scoria',
+          surface: 'Formed track – lots of loose, fine scoria',
           description: 'One of Auckland’s iconic landmarks, Rangitoto Island is an amazing day out. Arrive by ferry or private boat and explore, The 360-degree views of Auckland and the Hauraki Gulf from the summit are spectacular. There are plenty of other walking tracks if you are keen to explore further and short lava caves that are worth investigating.'
         },
         {
@@ -105,7 +105,7 @@ exports.seed = function (knex) {
           elevationGain: 675,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'Paths guide you along the walk',
+          surface: 'Paths guide you along the walk',
           description: 'The North Head Historical Reserve is considered to be the most significant historical coastal defence site in New Zealand and receives a significant number of visitors each year. The location has commanding views over the Hauraki Gulf and inner harbour. First used by Maori for defence purposes the site was one of three cone pa in the Devonport area.'
         },
         {
@@ -126,7 +126,7 @@ exports.seed = function (knex) {
           elevationGain: 346,
           timeTaken: '1.50 Hours',
           difficulty: 'Intermediate',
-          Surface: 'Three quarters of the walk is on volcanic rock road and tracks',
+          surface: 'Three quarters of the walk is on volcanic rock road and tracks',
           description: 'The Motutapu Walkway starts at the southern end of Home Bay. Poles mark the track across farmland, climbing to the island’s 120 m trig station and giving panoramic views of the Hauraki Gulf. The track passes an area of native bush planted by volunteers in 2002 and 2003. '
         },
         {
@@ -147,7 +147,7 @@ exports.seed = function (knex) {
           elevationGain: 231,
           timeTaken: '2.0 Hours',
           difficulty: 'Easy',
-          Surface: 'Grass surface that has surrounding paths',
+          surface: 'Grass surface that has surrounding paths',
           description: 'Easy 2 hour round trip walk to One Tree Hill in Auckland. Excellent 360 views over Auckland from the top of One Tree Hill. Unfortunately the \'one tree\' is now no longer and is only a stump. No car access to the top of One Tree Hill anymore.'
         },
         {
@@ -168,7 +168,7 @@ exports.seed = function (knex) {
           elevationGain: 89,
           timeTaken: '1.5 Hours',
           difficulty: 'Easy',
-          Surface: 'bush track that can become slippery',
+          surface: 'bush track that can become slippery',
           description: 'Kitekite Falls Hike is a 3.5 kilometer moderately trafficked out and back trail located near Auckland, Auckland, New Zealand that features a waterfall and is good for all skill levels. The trail is primarily used for hiking, walking, and nature trips and is accessible year-round.'
         },
         {
@@ -189,7 +189,7 @@ exports.seed = function (knex) {
           elevationGain: 24,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'wooden path',
+          surface: 'wooden path',
           description: 'Orakei Basin Walkway is a 3.1 kilometer moderately trafficked loop trail located near Auckland, Auckland, New Zealand that features a lake and is good for all skill levels. The trail is primarily used for walking, running, nature trips, and bird watching and is accessible year-round.'
         },
         {
@@ -210,7 +210,7 @@ exports.seed = function (knex) {
           elevationGain: 24,
           timeTaken: '1 Hour',
           difficulty: 'Easy',
-          Surface: 'wooden path',
+          surface: 'wooden path',
           description: 'Orakei Basin Walkway is a 3.1 kilometer moderately trafficked loop trail located near Auckland, Auckland, New Zealand that features a lake and is good for all skill levels. The trail is primarily used for walking, running, nature trips, and bird watching and is accessible year-round.'
         }
       ])
