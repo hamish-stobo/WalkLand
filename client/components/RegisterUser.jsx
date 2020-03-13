@@ -53,6 +53,7 @@ class RegisterUser extends Component {
 
             <label  name="bio-label">Bio</label>
             <textarea 
+              className="add-some-margin"
               name='bio'
               placeholder='User bio'
               value={this.state.bio}
@@ -61,6 +62,7 @@ class RegisterUser extends Component {
 
             <label name="avatarImage-label">Profile Picture</label>
             <input 
+              className="add-some-margin"
               name='avatarImage'
               placeholder='Your profile image'
               value={this.state.avatarImage}
@@ -70,6 +72,7 @@ class RegisterUser extends Component {
 
             <label name="coverPhoto-label">Cover Photo</label>
             <input 
+              className="add-some-margin"
               name='coverPhoto'
               placeholder='Link to a cover photo'
               value={this.state.coverPhoto}
