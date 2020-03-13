@@ -55,7 +55,7 @@ class ProfileReviews extends Component {
               </div>
             </div>
             {myProfile &&
-            <div>
+            <div className="review-btns-wrapper">
               <button className="btn greenify" onClick={() => this.giveToEdit(review)}>Edit Review</button>
               <button className="btn btn-danger h-r-b" onClick={() => this.deleteReviewFn(review)}>Delete Review</button>
             </div>

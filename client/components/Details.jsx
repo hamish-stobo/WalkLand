@@ -119,7 +119,7 @@ class Details extends Component {
                         this.props.viewProfile(item.author)
                       }}>{item.author}</a></span>
                       {item.author === this.props.login.username && 
-                      <div>
+                      <div className="review-btns-wrapper">
                         <button className="btn greenify" onClick={() => this.setState({selectedReview: item, toggleEdit: !this.state.toggleEdit})}>Edit review</button>
                         <button className="btn btn-danger h-r-b" onClick={() => this.deleteReviewFn(item)}>Delete Review</button>
                       </div>

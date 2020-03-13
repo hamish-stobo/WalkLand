@@ -136,3 +136,7 @@ align-self: center;
   z-index: 2; 
   cursor: pointer; 
 }
+
+.review-btns-wrapper {
+  text-align: center
+}
