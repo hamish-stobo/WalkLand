@@ -4,8 +4,6 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 const passport = require('passport')
-const jwtSecret = process.env.SECRET_KEY
-const jwt = require('jsonwebtoken')
 
 const db = require('../db/db')
 
