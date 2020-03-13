@@ -70,8 +70,11 @@ function getReviewRatings (db = connection) {
 }
 
 function addReview (review, db = connection) {
+  console.log('review given to pg for insert ', review)
   return db('ratingReviews')
     .insert(review)
+    .then(res => console.log(res))
+    .catch(err => console.log ('error from pg ', err))
 }
 
 function editReview (review, db = connection) {

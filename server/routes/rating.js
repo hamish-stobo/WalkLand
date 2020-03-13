@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   db.findUser(req.body.username)
-    .then(returnedUser => {
+    .then(() => {
       const newObject = {
         walkId: req.body.walkId,
         username: req.body.username,
