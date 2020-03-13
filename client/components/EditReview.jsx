@@ -48,7 +48,7 @@ class EditReview extends Component {
               /><br/>
               <input  type='hidden' value={this.props.selectedReview.walkId} name="walkId" />
               <input type='hidden' value={this.props.selectedReview.username} name="username" />
-              <button name = "submitReview" type='submit'>Update Review</button>
+              <button className="btn greenify" name="submitReview" type='submit'>Update Review</button>
             </form>
           </div>
         )

@@ -72,9 +72,20 @@ function getReviewRatings (db = connection) {
 function addReview (review, db = connection) {
   console.log('review given to pg for insert ', review)
   return db('ratingReviews')
-    .insert({walkId: review.walkId, username: review.username, rating: review.rating, review: review.review})
+  .max('id')
+  .then(res => {
+    const obj = res[0]
+    let id = 0
+    for(const prop in obj) {
+      console.log('id from insert', obj[prop])
+      id = obj[prop] + 1
+    }
+    return db('ratingReviews')
+    .insert({id, walkId: review.walkId, username: review.username, rating: review.rating, review: review.review})
     .then(res => console.log(res))
     .catch(err => console.log ('error from pg ', err))
+  })
+  
 }
 
 function editReview (review, db = connection) {
