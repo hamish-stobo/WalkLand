@@ -80,11 +80,13 @@
 
 .form-profile-img {
   grid-column: 1 / span 2;
+  grid-row: 6 / 7;
   box-sizing: border-box;
-  border-radius: 50%; 
-  width: 120px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 5px;
 }
 
 .form-cover-img {
@@ -94,6 +96,62 @@
   margin: 0 auto;
   padding: 10px;
 }
+
+.editFormGrid {
+  grid-template-rows: 2fr 2fr 1fr 1fr 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "header header"
+    "biolabel bioinput"
+    "avatarImgLabel avatarImgInput"
+    "avatarImg avatarImg"
+    "coverImgLabel coverImgInput"
+    "coverImg coverImg"
+    "submit submit";
+}
+
+.editFormGrid > h3 {
+  grid-area: header;
+}
+
+.editFormGrid label[name="bio-label"] {
+  grid-area: biolabel;
+}
+
+.editFormGrid textarea[name="bio"] {
+  grid-area: bioinput
+}
+
+.editFormGrid label[name="avatarImage-label"] {
+  grid-area: avatarImgLabel;
+}
+
+.editFormGrid input[name="avatarImage"] {
+  grid-area: avatarImgInput;
+}
+
+.editFormGrid > .form-profile-img {
+  grid-area: avatarImg
+}
+
+.editFormGrid label[name="coverPhoto-label"] {
+  grid-area: coverImgLabel;
+}
+
+.editFormGrid input[name="coverPhoto"] {
+  grid-area: coverImgInput;
+}
+
+.editFormGrid > .form-cover-img {
+  grid-area: coverImg;
+}
+
+.editFormGrid > button[name="submit"] {
+  grid-area: submit;
+}
+
+
+
 
 
 

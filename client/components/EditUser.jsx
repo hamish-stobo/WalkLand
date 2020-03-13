@@ -25,10 +25,10 @@ class EditUser extends Component {
       <div className='popup'>
         <button className='button-round button-x' onClick={this.props.closePopup}>x</button>
         <div className='popup_inner'>
-          <form onSubmit={this.handleSubmit}>
+          <form className="editFormGrid" onSubmit={this.handleSubmit}>
             <h3>Edit your profile</h3>
 
-            <label  name="bio-label">Bio</label>
+            <label name="bio-label">Bio</label>
             <textarea 
               className="add-some-margin"
               name='bio'
@@ -39,6 +39,7 @@ class EditUser extends Component {
 
             <label name="avatarImage-label">Profile Picture</label>
             <input 
+              type="text"
               className="add-some-margin"
               name='avatarImage'
               placeholder='Your profile image'
@@ -49,6 +50,7 @@ class EditUser extends Component {
 
             <label name="coverPhoto-label">Cover Photo</label>
             <input 
+              type="text"
               className="add-some-margin"
               name='coverPhoto'
               placeholder='Link to a cover photo'

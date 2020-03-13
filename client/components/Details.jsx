@@ -156,7 +156,7 @@ class Details extends Component {
             /><br/>
             <input  type='hidden' value={this.props.selectedWalk.id} name="walkId" />
             <input type='hidden' value={this.props.login.username} name="username" />
-            <button name = "submitReview" type='submit'>Submit Review</button>
+            <button className="btn greenify" name="submitReview" type='submit'>Submit Review</button>
           </form>
         </div>
           }

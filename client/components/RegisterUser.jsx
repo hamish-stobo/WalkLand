@@ -70,7 +70,8 @@ class RegisterUser extends Component {
               onChange={this.handleChange}
               required
             />
-            {this.state.avatarImage && <img className="form-profile-img" width="25" src={this.state.avatarImage} placeholder="Your profile picture"/>}
+            {this.state.avatarImage && 
+              <img className="form-profile-img" width="25" src={this.state.avatarImage} placeholder="Your profile picture"/>}
 
             <label name="coverPhoto-label">Cover Photo</label>
             <input 

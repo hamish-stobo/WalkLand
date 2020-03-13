@@ -52,7 +52,7 @@ class ProfileReviews extends Component {
             </div>
             {myProfile &&
             <div>
-              <button className="btn greenify" onClick={() => this.giveToEdit(review)}>Edit walk</button>
+              <button className="btn greenify" onClick={() => this.giveToEdit(review)}>Edit Review</button>
               <button className="btn btn-danger h-r-b" onClick={() => this.deleteReviewFn(review)}>Delete Review</button>
             </div>
             }
