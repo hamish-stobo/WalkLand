@@ -60,8 +60,7 @@
 }
 
 .hamish-review-card {
-  width: 30% !important;
-  max-width: 30%;
+  width: 30%;
   margin: 5px;
   min-height: 270px;
   border-radius: 5px;

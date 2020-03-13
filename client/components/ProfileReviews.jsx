@@ -24,7 +24,6 @@ class ProfileReviews extends Component {
   }
 
   render () {
-    console.log('props available to profile reviews component, ', this.props)
     const myProfile = this.props.viewProfile === this.props.auth.username
     const profileReviews = this.props.ratings
     .filter(rating => rating.username === this.props.viewProfile)
@@ -40,7 +39,7 @@ class ProfileReviews extends Component {
       {
         profileReviews.map((review, idx) => 
         <>
-        <div className="hamish-review-card" key={idx}>
+        <div className="hamish-review-card card" key={idx}>
             <img className="profile-walk-image" src={review.mainPhoto}/>
             <div className="profile-card-bot">
               <span>Name of walk: {review.title}</span>
