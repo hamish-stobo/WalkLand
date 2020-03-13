@@ -81,8 +81,8 @@
 .form-profile-img {
   grid-column: 1 / span 2;
   box-sizing: border-box;
-  border-radius: 80px;
-  width: 40%;
+  border-radius: 50%; 
+  width: 120px;
   margin: 0 auto;
   padding: 10px;
 }
