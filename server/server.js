@@ -16,7 +16,6 @@ server.use(Cors())
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 server.use(passport.initialize())
-// server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
 server.use('/api/v1/auth', auth)

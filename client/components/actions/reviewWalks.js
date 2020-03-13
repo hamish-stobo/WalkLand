@@ -4,7 +4,7 @@ import { getReviewRatings } from './allWalks'
 export function createReview (review) {
   return (dispatch) => {
     return request
-      .post('http://localhost:3000/api/v1/rating')
+      .post('/api/v1/rating')
       .send(review)
       .then(res => {
         if (res.message) {
@@ -19,7 +19,7 @@ export function createReview (review) {
 export function editReview (review) {
   return dispatch => {
     return request
-    .post(`http://localhost:3000/api/v1/rating/edit`)
+    .post('/api/v1/rating/edit')
     .set('authorization', `bearer ${localStorage.token}`)
     .send(review)
     .then(res => {
@@ -35,7 +35,7 @@ export function editReview (review) {
 export function deleteReview (review) {
   return dispatch => {
     return request
-    .delete(`http://localhost:3000/api/v1/rating`)
+    .delete('/api/v1/rating')
     .set('authorization', `bearer ${localStorage.token}`)
     .send(review)
     .then(res => {

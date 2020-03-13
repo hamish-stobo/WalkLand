@@ -12,7 +12,7 @@ export const receiveProfileInfo = profileInfo => {
 export function fetchProfileInfo (user) {
   return dispatch => {
     return request
-      .get(`http://localhost:3000/api/v1/users/${user}`)
+      .get(`/api/v1/users/${user}`)
       .then(res => {
         dispatch(receiveProfileInfo(res.body))
       })
