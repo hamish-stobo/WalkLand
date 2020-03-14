@@ -1,36 +1,13 @@
-![Image description](https://github.com/harakeke-2020/WalkLand/blob/dev/server/public/images/logo-black.png?raw=true)
+![Image description](https://github.com/harakeke-2020/WalkLand/blob/dev/server/public/images/mainlogo.png?raw=true)
 
 ## 🌏 Welcome to WalkLand 🌏
 
 
-WalkLand is a final group projected created by students* at Dev Academy.
-*Emily Shen, Hamish Stobo, James Panoho, Jared James, Kevin Kim, Tom Mathers
+WalkLand is a final group projected created by students at Dev Academy.
 
-## Please see the wiki for guidance around this project. see [here](https://github.com/harakeke-2020/WalkLand/wiki/Workflow)
-
-Auckland is a lovely city, located within some of the most beautiful parts of New Zealand.
-Yet, people search far and wide, unbeknownst to the beauty that Auckland can provide, just a short distance away.
-We want to be able to share this amazing city called Auckland, and allow people to be aware of some of the most beautiful walks that Auckland has to provide.
-
-We hope you enjoy your time in Walkland.
-
-## Before you start
-The app hasn't been deployed, and the working branch is dev.
-Please make sure you are on the dev branch before installing!
-
-
-## Installing
-Firstly, install all the required packages by running:
-```java
-$ npm install
-```
-
-
-## Executing the app
-Nice and easy:
-```java
-$ npm run walkland
-```
+Original project refactored and updated, in addition to having new features added,
+by Hamish Stobo.
+Expanded project live at http://walkland-app.herokuapp.com/
 
 
 ## What is Walkland?
