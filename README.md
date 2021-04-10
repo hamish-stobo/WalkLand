@@ -6,7 +6,7 @@
 WalkLand is a final group projected created by students at Dev Academy.
 
 Original project refactored and updated, in addition to having new features added,
-by Hamish Stobo.
+in this fork.
 Expanded project live at http://walkland-app.herokuapp.com/
 
 
